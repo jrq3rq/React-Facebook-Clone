@@ -16,6 +16,118 @@ npm install @material-ui/core
 
 ```
 
+```shell
+
+npm i firebase
+
+on your firebase.js
+    import firebase from "firebase";
+on firebase start firestore DB
+    initialize Auth signin from GoogleAuth
+on you firebase.js
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+    const db = firebaseApp.firestore();
+    const auth = firebase.auth();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+To access outside of the file:
+    export {auth, provider};
+    export default db;
+```
+
+## Sample `firebase.js`
+
+```shell
+
+import firebase from "firebase";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBEe6uT3PUbj-9txu5Wek8Yut9fOYrSloQ",
+  authDomain: "facebook-clone-ec66a.firebaseapp.com",
+  databaseURL: "https://facebook-clone-ec66a.firebaseio.com",
+  projectId: "facebook-clone-ec66a",
+  storageBucket: "facebook-clone-ec66a.appspot.com",
+  messagingSenderId: "211357161970",
+  appId: "1:211357161970:web:0a5f7874c25544c63bb36b",
+  measurementId: "G-M3SF6671L8",
+};
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+export { auth, provider };
+export default db;
+
+
+```
+
+## Import onto Login `commponent`
+
+```shell
+
+import {auth, provider} from "./firebase";
+
+  const signIn = () => {
+    //Sign In...
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => alert(error.message));
+  };
+```
+
+## `reducer.js` use sample:
+
+```shell
+
+export const initialState = {
+    user: null,
+}
+
+export const actionTypes = {
+    SET_USER: "SET_USER"
+}
+
+const reducer = (state, action) => {
+    console.log(action);
+    switch (action.type) {
+        case actionTypes.SET_USER:
+            return {
+                ...state,
+                user: action.user,
+            };
+
+        default:
+            return state;
+    }
+}
+
+export default reducer;
+```
+
+## `Index.js` wrap <App /> using `<StateProvider>`
+
+```shell
+
+import { StateProvider } from "./StateProvider";
+import reducer, {initialState} from "./reducer";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+    </StateProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
