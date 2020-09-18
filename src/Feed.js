@@ -18,8 +18,22 @@ function Feed() {
         username="Jamesrrs.me"
         image="https://cdn.cnn.com/cnnnext/dam/assets/190517091026-07-unusual-landscapes-travel-full-169.jpg"
       />
-      <Post />
-      <Post />
+      <Post
+        profilePic={
+          "https://1.bp.blogspot.com/-TOIPpmI44G8/UAwL0v2RFnI/AAAAAAAAsFs/eJBUQ-iTVRI/s1600/funny+chimp+pictures+(11).jpg"
+        }
+        message="Wow this actually works twice"
+        timestamp="This is the timestamp"
+        username="second image here"
+      />
+      <Post
+        profilePic={
+          "https://1.bp.blogspot.com/-TOIPpmI44G8/UAwL0v2RFnI/AAAAAAAAsFs/eJBUQ-iTVRI/s1600/funny+chimp+pictures+(11).jpg"
+        }
+        message="Wow this actually works twice"
+        timestamp="This is the timestamp"
+        username="third image here"
+      />
     </div>
   );
 }
