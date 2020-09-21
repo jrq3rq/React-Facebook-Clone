@@ -3,10 +3,10 @@
     display: flex;
     justify-content: space-between;
     position: sticky;
-    background-color: white;
+    background-color: #242526;
     z-index: 100;
     top: 0;
-    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 8px -9px rgba(110, 55, 55, 0.75);
 }
 
 .header__left {
@@ -17,7 +17,7 @@
 .header__input {
     display: flex;
     align-items: center;
-    background-color: #eff2f5;
+    background-color: #3a3b3c;
     padding: 10px;
     margin-left: 10px;
     border-radius: 999px;
@@ -43,11 +43,11 @@
 /* Center Icons change Hover color from gray to Facebook  Blue: #2e81f4 */
 
 .header__option>.MuiSvgIcon-root {
-    color: gray;
+    color: #757575;
 }
 
 .header__option:hover>.MuiSvgIcon-root {
-    color: #2e81f4;
+    color: #757575;
 }
 
 .header__option--active>.MuiSvgIcon-root {
@@ -66,7 +66,7 @@
 }
 
 .header__option:hover {
-    background-color: #eff2f5;
+    background-color: #3a3b3c;
     border-radius: 10px;
     align-items: center;
     padding: 0 30px;
@@ -79,6 +79,7 @@
 }
 
 .header__info>h4 {
+    color: #757575;
     margin-left: 10px;
 }
 

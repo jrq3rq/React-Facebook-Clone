@@ -6,11 +6,12 @@
 }
 
 .sidebarRow:hover {
-    background-color: lightgray;
+    background-color: #3a3b3c;
     border-radius: 10px;
 }
 
 .sidebarRow>h4 {
+    color: #e4e6eb;
     margin-left: 20px;
     font-weight: 600;
 }
