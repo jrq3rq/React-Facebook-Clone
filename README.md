@@ -1,4 +1,4 @@
-Facebook Clone Imgaes:
+Facebook Clone Image:
 
 ![Image of Facebook-clone-dark](./src/images/facebook-clone-readme-img.png)
 ![Image of Facebook-clone-dark](./src/images/facebook-clone-readme-img2.png)
